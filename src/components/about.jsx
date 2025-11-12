@@ -22,7 +22,7 @@ const AboutSection = () => {
             </div>
 
             <p className="mb-4">
-              I'm <strong>David Sani</strong>, known as <strong>justdavid_tech</strong>. 
+              I'm <strong className="text-[#e67e22]">David Sani</strong>, known as <strong className="text-[#e67e22]">justdavid_tech</strong>. 
               A professional software engineer proficient in both front-end and 
               back-end technologies, allowing me to build robust and user-friendly 
               web and mobile applications. With a keen eye for detail and a 
@@ -31,14 +31,14 @@ const AboutSection = () => {
 
             <h4 className="font-semibold text-lg mb-2">My Skillset:</h4>
 
-            <p><strong>Front-End Development:</strong> HTML5, CSS, JavaScript, React.js, Vue.js, Next.js, TailwindCSS, Bootstrap5</p>
-            <p><strong>Back-End Development:</strong> Node.js, PHP, Python</p>
-            <p><strong>Mobile App Development:</strong> Flutter, React Native</p>
-            <p><strong>UI/UX Design:</strong> Figma, Sketch, Adobe XD</p>
-            <p><strong>Databases:</strong> MySQL, MongoDB, PostgreSQL</p>
-            <p><strong>E-commerce:</strong> WooCommerce, Shopify, Custom Solutions, WordPress</p>
-            <p><strong>Tools:</strong> Git, Webpack, Docker, AWS</p>
-            <p><strong>Problem-Solving and Critical Thinking:</strong> Identifying and resolving complex technical challenges</p>
+            <p><strong className="text-[#e67e22]">Front-End Development:</strong> HTML5, CSS, JavaScript, React.js, Vue.js, Next.js, TailwindCSS, Bootstrap5</p>
+            <p><strong className="text-[#e67e22]">Back-End Development:</strong> Node.js, PHP, Python</p>
+            <p><strong className="text-[#e67e22]">Mobile App Development:</strong> Flutter, React Native</p>
+            <p><strong className="text-[#e67e22]">UI/UX Design:</strong> Figma, Sketch, Adobe XD</p>
+            <p><strong className="text-[#e67e22]">Databases:</strong> MySQL, MongoDB, PostgreSQL</p>
+            <p><strong className="text-[#e67e22]">E-commerce:</strong> WooCommerce, Shopify, Custom Solutions, WordPress</p>
+            <p><strong className="text-[#e67e22]">Tools:</strong> Git, Webpack, Docker, AWS</p>
+            <p><strong className="text-[#e67e22]">Problem-Solving and Critical Thinking:</strong> Identifying and resolving complex technical challenges</p>
 
             <p className="mt-4">
               I'm excited to collaborate with clients to bring their ideas to life. 

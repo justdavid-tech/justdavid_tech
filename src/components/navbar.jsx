@@ -1,17 +1,16 @@
 import { useState, useRef, useEffect } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Home, Briefcase, User, FolderOpen, BookOpen, Mail, ArrowRight } from "lucide-react";
 
 const NAV_LEFT = [
-  { name: "Home", href: "/" },
-  { name: "Services", href: "#services", isServices: true },
-  { name: "About", href: "/about" }
+  { name: "Home", href: "/", icon: Home },
+  { name: "Services", href: "#services", isServices: true, icon: Briefcase },
+  { name: "About", href: "/about", icon: User }
 ];
 
 const NAV_RIGHT = [
-
-  { name: "Portfolio", href: "/portfolio" },
-  { name: "Blog", href: "/blog" },
-  { name: "Contact", href: "/contact" },
+  { name: "Portfolio", href: "/portfolio", icon: FolderOpen },
+  { name: "Blog", href: "/blog", icon: BookOpen },
+  { name: "Contact", href: "/contact", icon: Mail },
 ];
 
 const MEGA_MENU = [
@@ -92,7 +91,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 lg:px-6">
           <div className="flex items-center justify-between lg:justify-center lg:gap-16 h-20">
             {/* Left Navigation (Desktop) */}
-            <div className="hidden lg:flex items-center space-x-13">
+            <div className="hidden lg:flex items-center space-x-8">
               {NAV_LEFT.map((link) => {
                 if (link.isServices) {
                   return (
@@ -133,13 +132,13 @@ export default function Navbar() {
                 <img
                   src="/images/main-logo.png"
                   alt="Justdavid_tech Logo"
-                  className="h-40 w-auto"
+                  className="h-45 w-auto"
                 />
               </a>
             </div>
 
             {/* Right Navigation (Desktop) */}
-            <div className="hidden lg:flex items-center space-x-13">
+            <div className="hidden lg:flex items-center space-x-8">
               {NAV_RIGHT.map((link) => (
                 <a
                   key={link.name}
@@ -203,6 +202,22 @@ export default function Navbar() {
                   </div>
                 ))}
               </div>
+              
+              {/* Featured Service Highlight */}
+              <div className="mt-8 pt-8 border-t border-gray-200">
+                <div className="bg-gradient-to-r from-[#e67e22]/10 to-[#e67e22]/5 rounded-lg p-6 flex items-center justify-between">
+                  <div>
+                    <h5 className="font-bold text-gray-900 mb-1">Not sure which service you need?</h5>
+                    <p className="text-sm text-gray-600">Let's discuss your project and find the perfect solution</p>
+                  </div>
+                  <a 
+                    href="/contact" 
+                    className="bg-[#e67e22] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#d35400] transition-all flex items-center gap-2 whitespace-nowrap"
+                  >
+                    Get Consultation <ArrowRight size={18} />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -213,9 +228,9 @@ export default function Navbar() {
             mobileOpen ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
         >
-          {/* Backdrop */}
+          {/* Backdrop with gradient */}
           <div
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/50 backdrop-blur-sm"
             onClick={() => setMobileOpen(false)}
           />
 
@@ -226,17 +241,17 @@ export default function Navbar() {
             }`}
           >
             <div className="flex flex-col h-full">
-              {/* Header */}
-              <div className="flex items-center justify-between p-6 border-b border-gray-200">
+              {/* Header with gradient */}
+              <div className="flex items-center justify-between p-6 border-b border-gray-200 bg-gradient-to-r from-[#e67e22]/5 to-transparent">
                 <img
                   src="/images/main-logo.png"
                   alt="Logo"
-                  className="h-10 w-auto"
+                  className="h-45 w-auto"
                 />
                 <button
                   onClick={() => setMobileOpen(false)}
                   aria-label="Close menu"
-                  className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+                  className="p-2 rounded-lg hover:bg-white transition-colors"
                 >
                   <X size={24} />
                 </button>
@@ -245,20 +260,23 @@ export default function Navbar() {
               {/* Navigation */}
               <nav className="flex-1 overflow-y-auto p-6">
                 <ul className="space-y-2">
-                  {/* Home */}
+                  {/* All NAV_LEFT items including Home and About */}
                   {NAV_LEFT.map((link) => {
                     if (link.isServices) {
                       return (
                         <li key={link.name}>
                           <button
                             onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                            className="w-full flex justify-between items-center text-left font-semibold text-gray-800 hover:text-[#e67e22] py-3 px-4 rounded-lg hover:bg-gray-50 transition-all"
+                            className="w-full flex justify-between items-center text-left font-semibold text-gray-800 hover:text-[#e67e22] py-3 px-4 rounded-lg hover:bg-gray-50 transition-all group"
                           >
-                            <span>{link.name}</span>
+                            <span className="flex items-center gap-3">
+                              <link.icon size={20} className="text-[#e67e22]" />
+                              {link.name}
+                            </span>
                             <ChevronDown
                               size={18}
                               className={`transition-transform duration-300 ${
-                                mobileServicesOpen ? "rotate-180" : ""
+                                mobileServicesOpen ? "rotate-180 text-[#e67e22]" : ""
                               }`}
                             />
                           </button>
@@ -266,10 +284,10 @@ export default function Navbar() {
                           {/* Services Submenu */}
                           <div
                             className={`overflow-hidden transition-all duration-300 ${
-                              mobileServicesOpen ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
+                              mobileServicesOpen ? "max-h-[1000px] opacity-100 mt-2" : "max-h-0 opacity-0"
                             }`}
                           >
-                            <div className="mt-2 ml-4 pl-4 border-l-2 border-[#e67e22]/30">
+                            <div className="ml-4 pl-4 border-l-2 border-[#e67e22]/30">
                               {MEGA_MENU.map((col) => (
                                 <div key={col.title} className="mb-5">
                                   <h5 className="text-xs font-bold text-[#e67e22] mb-3 uppercase tracking-wider">
@@ -280,9 +298,10 @@ export default function Navbar() {
                                       <li key={it.name}>
                                         <a
                                           href={it.href}
-                                          className="text-sm text-gray-700 hover:text-[#e67e22] block py-1.5 transition-colors"
+                                          className="text-sm text-gray-700 hover:text-[#e67e22] block py-1.5 transition-colors hover:translate-x-1 transform duration-200 flex items-center gap-2"
                                           onClick={() => setMobileOpen(false)}
                                         >
+                                          <span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>
                                           {it.name}
                                         </a>
                                       </li>
@@ -295,33 +314,63 @@ export default function Navbar() {
                         </li>
                       );
                     }
-                    return null;
+                    return (
+                      <li key={link.name}>
+                        <a
+                          href={link.href}
+                          className="text-gray-800 hover:text-[#e67e22] hover:bg-gray-50 font-semibold flex items-center gap-3 py-3 px-4 rounded-lg transition-all group"
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          <link.icon size={20} className="text-[#e67e22]" />
+                          {link.name}
+                        </a>
+                      </li>
+                    );
                   })}
 
-                  {/* Other Navigation Items */}
+                  {/* Divider */}
+                  <li className="py-2">
+                    <div className="border-t border-gray-200"></div>
+                  </li>
+
+                  {/* NAV_RIGHT items */}
                   {NAV_RIGHT.map((link) => (
                     <li key={link.name}>
                       <a
                         href={link.href}
-                        className="text-gray-800 hover:text-[#e67e22] hover:bg-gray-50 font-semibold block py-3 px-4 rounded-lg transition-all"
+                        className="text-gray-800 hover:text-[#e67e22] hover:bg-gray-50 font-semibold flex items-center gap-3 py-3 px-4 rounded-lg transition-all group"
                         onClick={() => setMobileOpen(false)}
                       >
+                        <link.icon size={20} className="text-[#e67e22]" />
                         {link.name}
                       </a>
                     </li>
                   ))}
                 </ul>
+
+                {/* Quick Info Card */}
+                <div className="mt-6 bg-gradient-to-br from-[#e67e22]/10 to-[#e67e22]/5 rounded-lg p-4 border border-[#e67e22]/20">
+                  <p className="text-sm text-gray-700 mb-2">
+                    <span className="font-bold text-gray-900">Ready to start?</span>
+                  </p>
+                  <p className="text-xs text-gray-600">
+                    Get a free consultation and quote for your project
+                  </p>
+                </div>
               </nav>
 
-              {/* Footer CTA */}
-              <div className="p-6 border-t border-gray-200">
+              {/* Footer CTA with enhanced styling */}
+              <div className="p-6 border-t border-gray-200 bg-gray-50">
                 <a
                   href="/contact"
-                  className="block w-full bg-[#e67e22] text-white text-center font-bold py-3 px-6 rounded-lg hover:bg-[#d35400] transition-all transform hover:scale-105 shadow-lg"
+                  className="block w-full bg-[#e67e22] text-white text-center font-bold py-4 px-6 rounded-lg hover:bg-[#d35400] transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
                   onClick={() => setMobileOpen(false)}
                 >
-                  Get Started
+                  Get Started <ArrowRight size={20} />
                 </a>
+                <p className="text-center text-xs text-gray-500 mt-3">
+                  Free consultation • Quick response
+                </p>
               </div>
             </div>
           </div>

@@ -27,7 +27,9 @@ function Home() {
     <PortfolioSection />
     <TestimonialsSection />
     <FAQSection />
+    <div className='mt-20'>
     <ContactSection />
+    </div>
     <Footer />
      </>   
   )

@@ -7,6 +7,16 @@ import Blog from './pages/blog';
 import Contact from './pages/contact';
 import Services from './pages/services'; 
 
+// Sub Services
+import MobileAppDevelopment from './subServices/mobileApp';
+import BusinessWebsite from './subServices/business';
+import Ecommerce from './subServices/ecommerceSolution';
+import WebsiteMaintenance from './subServices/maintenance';
+import SeoServices from './subServices/seo';
+import LocalSEO from './subServices/local-seo';
+import DigitalMarketing from './subServices/digital-marketing';
+import SocialMediaMarketing from './subServices/social-media';
+import BrandServices from './subServices/branding';
 function App() {
 
   return (
@@ -17,6 +27,17 @@ function App() {
           <Route path = '/blog' element ={<Blog />} />
           <Route path = '/contact' element={<Contact />} />
           <Route path = '/services' element={<Services />} />
+
+          {/* Sub Services */}
+        <Route path = '/services/mobile-app' element={<MobileAppDevelopment />} />
+        <Route path = '/services/business' element={<BusinessWebsite />} />
+        <Route path = '/services/ecommerce' element={<Ecommerce />} />
+        <Route path = '/services/maintenance' element={<WebsiteMaintenance />} />
+        <Route path = '/services/Seo' element={<SeoServices />} />
+        <Route path = '/services/local-seo' element={<LocalSEO />} />
+        <Route path = '/services/digital-marketing' element={<DigitalMarketing />} />
+        <Route path = '/services/social-media' element={<SocialMediaMarketing />} />
+        <Route path = '/services/branding' element={<BrandServices />} />
         </Routes>
  
   )

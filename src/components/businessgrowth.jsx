@@ -77,7 +77,7 @@ export default function BusinessGrowthSection() {
               </div>
 
               {/* Floating Stats Cards */}
-              <div className="absolute -top-6 -left-6 bg-white rounded-xl shadow-lg p-4 animate-bounce" style={{ animationDuration: '3s' }}>
+              <div className="absolute -top-6 -left-[-20px] bg-white rounded-xl shadow-lg p-4 animate-bounce" style={{ animationDuration: '3s' }}>
                 <p className="text-xs font-semibold text-gray-600 mb-1">Total Clicks</p>
                 <h4 className="text-2xl font-bold text-[#e67e22]">26.6K</h4>
               </div>

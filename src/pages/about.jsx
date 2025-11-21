@@ -2,12 +2,13 @@ import React from 'react';
 import { Code, Palette, Rocket, Users, Award, Coffee, Clock, Heart, CheckCircle, Zap, Target, TrendingUp } from 'lucide-react';
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
+import SkillsetSection from '../components/skillSet';
 
 export default function AboutPage() {
   const stats = [
     { number: "50+", label: "Projects Completed", icon: <Rocket className="w-6 h-6 text-white" /> },
     { number: "30+", label: "Happy Clients", icon: <Users className="w-6 h-6 text-white" /> },
-    { number: "3+", label: "Years Experience", icon: <Award className="w-6 h-6 text-white" /> },
+    { number: "5+", label: "Years Experience", icon: <Award className="w-6 h-6 text-white" /> },
     { number: "24/7", label: "Support Available", icon: <Clock className="w-6 h-6 text-white" /> }
   ];
 
@@ -75,61 +76,81 @@ const journey = [
     <div className="bg-white">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-black text-white py-24 md:py-32">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-[#e67e22] rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#e67e22] rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+  {/* Animated Background Elements */}
+  <div className="absolute inset-0 opacity-20 pointer-events-none">
+    <div className="absolute top-24 left-12 w-72 h-72 bg-[#e67e22] rounded-full blur-[130px] animate-pulse"></div>
+    <div
+      className="absolute bottom-24 right-12 w-96 h-96 bg-[#e67e22] rounded-full blur-[150px] animate-pulse"
+      style={{ animationDelay: "1s" }}
+    ></div>
+  </div>
+
+  <div className="container mx-auto px-4 max-w-7xl relative z-10">
+    <div className="grid lg:grid-cols-2 gap-16 items-center">
+      
+      {/* LEFT CONTENT */}
+      <div className="space-y-6 text-center lg:text-left">
+        <div className="inline-block bg-[#e67e22]/20 text-[#e67e22] px-5 py-2 rounded-full text-sm font-semibold tracking-wide border border-[#e67e22]/40">
+          About Me
         </div>
 
-        <div className="container mx-auto px-4 max-w-7xl relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="space-y-6 text-center lg:text-left">
-              <div className="inline-block bg-[#e67e22] bg-opacity-20 text-white px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wider border border-[#e67e22] border-opacity-30">
-                About Me
-              </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                Hi, I'm Justdavid_tech
-                <span className="block text-[#e67e22] mt-2">Web Developer & Designer</span>
-              </h1>
-              <p className="text-lg text-gray-300 leading-relaxed max-w-2xl">
-                I'm a passionate full-stack developer and designer dedicated to creating stunning, functional websites that help businesses thrive in the digital world. With a focus on modern technologies and user-centric design, I transform ideas into reality.
-              </p>
-              <div className="flex flex-wrap gap-4 justify-center lg:justify-start pt-4">
-                <a href="/portfolio" className="bg-[#e67e22] text-white px-8 py-4 rounded-lg font-bold hover:bg-[#d35400] transition-all transform hover:-translate-y-1 shadow-lg">
-                  View Portfolio
-                </a>
-                <a href="/contact" className="bg-white text-gray-900 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all transform hover:-translate-y-1 shadow-lg">
-                  Let's Talk
-                </a>
-              </div>
-            </div>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+          Hi, I'm <span className="text-[#e67e22]">Justdavid_tech</span>
+          <span className="block text-white mt-2">Web Developer & Designer</span>
+        </h1>
 
-            {/* Right Image */}
-            <div className="relative flex justify-center lg:justify-end">
-              <div className="relative">
-                {/* Glow effect */}
-                <div className="absolute inset-0 bg-[#e67e22] opacity-20 blur-3xl rounded-full"></div>
-                
-                {/* Main Image */}
-                <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-8 border-[#e67e22] border-opacity-30 shadow-2xl">
-                  <img
-                    src="/images/whiteBlackme.png"
-                    alt="David - Web Developer"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+        <p className="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+          I'm a passionate full-stack developer and designer dedicated to building stunning,
+          high-performing websites that elevate brands and help businesses grow. I blend modern
+          technologies with user-focused design to turn ideas into digital experiences.
+        </p>
 
-                {/* Floating Badge */}
-                <div className="absolute -top-4 -right-4 bg-white text-gray-900 px-6 py-3 rounded-full shadow-xl font-bold animate-bounce" style={{ animationDuration: '3s' }}>
-                  <Coffee className="w-6 h-6 text-[#e67e22] mx-auto mb-1" />
-                  <span className="text-sm">Available</span>
-                </div>
-              </div>
-            </div>
+        <div className="flex flex-wrap gap-4 justify-center lg:justify-start pt-4">
+          <a
+            href="/portfolio"
+            className="bg-[#e67e22] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#d35400] transition-all transform hover:-translate-y-1 shadow-xl"
+          >
+            View Portfolio
+          </a>
+          <a
+            href="/contact"
+            className="bg-white text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all transform hover:-translate-y-1 shadow-xl"
+          >
+            Let's Talk
+          </a>
+        </div>
+      </div>
+
+      {/* RIGHT IMAGE */}
+      <div className="relative flex justify-center lg:justify-end">
+        <div className="relative">
+          
+          {/* Glow Effect */}
+          <div className="absolute inset-0 bg-[#e67e22] opacity-20 blur-3xl rounded-full"></div>
+
+          {/* Main Image */}
+          <div className="relative w-96 h-96 md:w-96 md:h-96 rounded-4xl overflow-hidden border-[10px] border-[#e67e22]/30 shadow-2xl">
+            <img
+              src="/images/me.jpg"
+              alt="David - Web Developer"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* Floating Badge */}
+          <div
+            className="absolute -top-4 -right-4 bg-white text-gray-900 px-6 py-3 rounded-full shadow-xl font-bold flex flex-col items-center animate-bounce"
+            style={{ animationDuration: "3s" }}
+          >
+            <Coffee className="w-6 h-6 text-[#e67e22] mb-1" />
+            <span className="text-xs">Available</span>
           </div>
         </div>
-      </section>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* Stats Section */}
       <section className="py-16 bg-gray-50 -mt-16 relative z-20">
@@ -189,6 +210,10 @@ const journey = [
           </div>
         </div>
       </section>
+
+
+<SkillsetSection />
+
 
       <section className="py-10 bg-white">
   <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -399,9 +424,7 @@ const journey = [
         </div>
       </section>
     </div>
-    <div className="mt-16">
-  <Footer />
-</div>
+<Footer />
     </>
   );
 }

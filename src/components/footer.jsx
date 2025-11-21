@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import { Phone, Mail, MapPin, Clock, Youtube, Instagram, Facebook, Linkedin, Github, Icon } from 'lucide-react';
 import { IconBrandThreads, IconBrandTiktok, IconBrandX, IconBrandWhatsapp, IconBrandYoutube, IconMail } from "@tabler/icons-react";
 
@@ -9,6 +10,8 @@ export default function Footer() {
     {
       title: "Web & App Development",
       links: [
+        { name: "Website Development", url: "/services/web-development" },
+        { name: "Website Design", url: "/services/web-design" },
         { name: "Mobile APP development", url: "/services/mobile-app" },
         { name: "Business website", url: "/services/business" },
         { name: "e-Commerce website", url: "/services/ecommerce" }
@@ -203,14 +206,13 @@ export default function Footer() {
             </p>
             <p>
               Click{' '}
-              <a
-                href="https://linktree-justdavid-tech.vercel.app"
+              <Link to= "/Why-I-Teach"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#e67e22] hover:underline font-semibold"
               >
                 here
-              </a>{' '}
+              </Link>{' '}
               to know why I give daily tutorials
             </p>
           </div>

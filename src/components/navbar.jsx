@@ -17,6 +17,8 @@ const MEGA_MENU = [
   {
     title: "WEB & APP DEVELOPMENT",
     items: [
+      { name: "Website Development", href: "/services/web-development" },
+      { name: "Website Design", href: "/services/web-design" },
       { name: "Mobile APP development", href: "/services/mobile-app" },
       { name: "Business website", href: "/services/business" },
       { name: "E-commerce website", href: "/services/ecommerce" },
@@ -210,12 +212,21 @@ export default function Navbar() {
                     <h5 className="font-bold text-gray-900 mb-1">Not sure which service you need?</h5>
                     <p className="text-sm text-gray-600">Let's discuss your project and find the perfect solution</p>
                   </div>
-                  <a 
-                    href="/contact" 
-                    className="bg-[#e67e22] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#d35400] transition-all flex items-center gap-2 whitespace-nowrap"
-                  >
-                    Get Consultation <ArrowRight size={18} />
-                  </a>
+                  <div className="flex flex-col items-start gap-2">
+  <p className="text-gray-600 text-sm sm:text-base">
+    Need a fast response? Chat with me instantly on WhatsApp.
+  </p>
+
+  <a 
+    href="https://wa.me/2349039977439?text=Hello%2C%20I%E2%80%99m%20interested%20in%20your%20services.%20I%20want%20to%20get%20started."
+    target="_blank"
+    rel="noopener noreferrer"
+    className="bg-[#e67e22] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#d35400] transition-all flex items-center gap-2 whitespace-nowrap"
+  >
+    Instant Consultation <ArrowRight size={18} />
+  </a>
+</div>
+
                 </div>
               </div>
             </div>
@@ -361,13 +372,21 @@ export default function Navbar() {
 
               {/* Footer CTA with enhanced styling */}
               <div className="p-6 border-t border-gray-200 bg-gray-50">
-                <a
-                  href="/contact"
-                  className="block w-full bg-[#e67e22] text-white text-center font-bold py-4 px-6 rounded-lg hover:bg-[#d35400] transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  Get Started <ArrowRight size={20} />
-                </a>
+              <a
+  href="/contact"
+  className="block w-full bg-[#e67e22] text-white text-center font-bold py-4 px-6 rounded-lg hover:bg-[#d35400] transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
+  onClick={() => {
+    setMobileOpen(false);
+
+    const message = "Hello! I came from your website and I want to get started.";
+    const encoded = encodeURIComponent(message);
+
+    window.open(`https://wa.me/2349039977439?text=${encoded}`, "_blank");
+  }}
+>
+  Get Started <ArrowRight size={20} />
+</a>
+
                 <p className="text-center text-xs text-gray-500 mt-3">
                   Free consultation • Quick response
                 </p>

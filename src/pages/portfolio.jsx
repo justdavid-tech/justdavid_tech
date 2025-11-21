@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { Github, Linkedin, Twitter, ExternalLink } from 'lucide-react';
+import { Github, Linkedin, Twitter, ExternalLink, Sparkles, ArrowRight } from 'lucide-react';
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
+import { Link } from 'react-router-dom';
+import '../App.css'
 
 const Portfolio = () => {
   const [expandedCategory, setExpandedCategory] = useState(null);
@@ -109,21 +111,109 @@ const Portfolio = () => {
       {/* Animated Background */}
       <div className="fixed top-20 right-20 w-96 h-96 bg-[#e67e22] rounded-full opacity-20 blur-3xl animate-pulse pointer-events-none"></div>
       <div className="fixed bottom-20 left-20 w-96 h-96 bg-[#e67e22] rounded-full opacity-20 blur-3xl animate-pulse pointer-events-none" style={{ animationDelay: '1s' }}></div>
+      <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden bg-gradient-to-br from-gray-900 via-black to-gray-900 p-40">
+  {/* Animated Background */}
+  <div className="absolute inset-0">
+    {/* Floating design elements */}
+    <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-[#e67e22] rounded-full filter blur-3xl opacity-10 animate-pulse" />
+    <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-[#e67e22] rounded-full filter blur-3xl opacity-5 animate-pulse" style={{animationDelay: '2s'}} />
+    
+    {/* Grid overlay */}
+    <div className="absolute inset-0 bg-[linear-gradient(rgba(230,126,34,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(230,126,34,0.1)_1px,transparent_1px)] bg-[size:60px_60px] animate-grid" />
+  </div>
 
-      {/* Hero */}
-      <section className="relative min-h-screen flex items-center justify-center px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 tracking-tight">
-            Justdavid_<span className="text-[#e67e22]">tech</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-400 mb-8">
-            Crafting digital experiences through websites, landing pages, thumbnails, and logos
-          </p>
-        </div>
-      </section>
+  {/* Main Content with Enhanced Visual Hierarchy */}
+  <div className="max-w-4xl mx-auto text-center relative z-10">
+    {/* Animated Brand Mark */}
+    <div className="relative inline-block mb-8">
+     <div className="inline-flex items-center gap-2 bg-[#e67e22]/20 text-[#e67e22] px-6 py-2 rounded-full font-semibold mb-6 text-sm backdrop-blur-sm">
+              <Sparkles size={16} />
+              PORTFOLIO
+            </div>
+      <div className="absolute -inset-4 bg-[#e67e22] rounded-full opacity-20 blur-xl animate-ping" style={{animationDuration: '3s'}} />
+      <div className="relative">
+        
+        <h1 className="text-6xl md:text-8xl font-bold mb-2 tracking-tighter bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+          Justdavid_
+          <span className="text-[#e67e22] drop-shadow-2xl">tech</span>
+        </h1>
+      </div>
+      
+      {/* Animated cursor */}
+      <div className="absolute -right-4 bottom-2 w-1 h-16 bg-[#e67e22] animate-blink" />
+    </div>
+
+    {/* Dynamic Tagline with Sequential Animation */}
+    <div className="relative">
+      <p className="text-xl md:text-2xl text-gray-400 mb-8 leading-relaxed">
+        <span className="inline-block animate-fade-in-up" style={{animationDelay: '0.1s'}}>Crafting</span>{' '}
+        <span className="inline-block animate-fade-in-up" style={{animationDelay: '0.3s'}}>digital</span>{' '}
+        <span className="inline-block animate-fade-in-up" style={{animationDelay: '0.5s'}}>experiences</span>{' '}
+        <span className="inline-block animate-fade-in-up" style={{animationDelay: '0.7s'}}>through</span>
+      </p>
+      
+      {/* Animated Services Carousel */}
+      <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-8">
+        {[
+  "web development",
+  "web design",
+  "business website",
+  "e-commerce website",
+  "mobile app development",
+  "landing pages",
+  "web maintenance",
+  "seo services",
+  "local seo services",
+  "digital marketing",
+  "social media marketing",
+  "branding services",
+  "thumbnails",
+  "logos"
+]
+.map((service, index) => (
+          <span
+            key={service}
+            className="inline-flex items-center px-4 py-2 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-full text-[#e67e22] font-semibold text-sm md:text-base animate-float"
+            style={{
+              animationDelay: `${0.9 + index * 0.2}s`,
+              // animationDuration: `${3 + index}s`
+              animationDuration: `${1.5 + index * 0.2}s`
+            }}
+          >
+            <span className="w-2 h-2 bg-[#e67e22] rounded-full mr-2 animate-pulse" />
+            {service}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    {/* Interactive CTA */}
+    <div className="animate-fade-in-up" style={{animationDelay: '1.7s'}}>
+    <Link to="/contact" className="bg-[#e67e22] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#d35400] transition-colors inline-flex items-center justify-center gap-2 cursor-pointer">
+                    Start Your Project <ArrowRight size={20} />
+                  </Link>
+    </div>
+  </div>
+
+  {/* Floating Particles */}
+  <div className="absolute inset-0 pointer-events-none">
+    {[...Array(12)].map((_, i) => (
+      <div
+        key={i}
+        className="absolute w-1 h-1 bg-[#e67e22] rounded-full opacity-40 animate-float"
+        style={{
+          left: `${Math.random() * 100}%`,
+          top: `${Math.random() * 100}%`,
+          animationDelay: `${Math.random() * 5}s`,
+          animationDuration: `${4 + Math.random() * 3}s`
+        }}
+      />
+    ))}
+  </div>
+</section>
 
       {/* Dynamic Sections */}
-      <Section id="websites" title="Websites" description="Full-featured web experiences that drive results" bgColor="bg-white" textColor="text-black" btnColor="bg-black" btnHover="hover:bg-gray-800" />
+      <Section id="websites" title="Websites" description="Full-featured web experiences that drive results. Click any project to explore the live website." bgColor="bg-white" textColor="text-black" btnColor="bg-black" btnHover="hover:bg-gray-800" />
       <Section id="landing" title="Landing Pages" description="Hero sections designed to convert visitors into customers" bgColor="bg-black" textColor="text-white" btnColor="bg-[#e67e22]" btnHover="hover:bg-[#d35400]" />
       <Section id="thumbnails" title="YouTube Thumbnails" description="Click-worthy designs that boost your video views" bgColor="bg-white" textColor="text-black" btnColor="bg-black" btnHover="hover:bg-gray-800" />
       <Section id="logos" title="Logos" description="Brand identities that leave lasting impressions" bgColor="bg-black" textColor="text-white" btnColor="bg-[#e67e22]" btnHover="hover:bg-[#d35400]" />

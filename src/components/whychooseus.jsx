@@ -142,7 +142,7 @@ export default function PartnerAndWhySections() {
 
                 {/* Floating particles effect */}
                 <div className="absolute top-1/4 -right-4 w-3 h-3 bg-[#e67e22] rounded-full animate-bounce" style={{ animationDelay: '0s', animationDuration: '2s' }}></div>
-                <div className="absolute top-1/3 -left-4 w-2 h-2 bg-[#e67e22] rounded-full animate-bounce" style={{ animationDelay: '0.5s', animationDuration: '2.5s' }}></div>
+                <div className="absolute top-1/3 w-2 h-2 bg-[#e67e22] rounded-full animate-bounce" style={{ animationDelay: '0.5s', animationDuration: '2.5s' }}></div>
                 <div className="absolute bottom-1/4 right-8 w-2.5 h-2.5 bg-[#e67e22] rounded-full animate-bounce" style={{ animationDelay: '1s', animationDuration: '3s' }}></div>
               </div>
             </div>

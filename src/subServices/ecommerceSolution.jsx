@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import { ShoppingCart, Smartphone, Zap, Shield, Search, CreditCard, BarChart, Headphones, Check, Star, ArrowRight } from 'lucide-react';
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
@@ -20,7 +22,7 @@ const Ecommerce = () => {
     {
       icon: <CreditCard className="w-8 h-8" />,
       title: "Secure Payment Integration",
-      description: "Stripe, PayPal, and more. Multiple payment options to maximize conversions"
+      description: "Stripe, Paystack, PayPal, and more. Multiple payment options to maximize conversions"
     },
     {
       icon: <Zap className="w-8 h-8" />,
@@ -134,52 +136,22 @@ const Ecommerce = () => {
     }
   ];
 
-  const projects = [
-    {
-      id: 1,
-      title: "Fashion Boutique",
-      category: "Clothing & Accessories",
-      image: "https://via.placeholder.com/600x400/e67e22/ffffff?text=Fashion+Store",
-      results: "150% increase in online sales"
-    },
-    {
-      id: 2,
-      title: "Electronics Hub",
-      category: "Tech & Gadgets",
-      image: "https://via.placeholder.com/600x400/d35400/ffffff?text=Electronics+Store",
-      results: "300+ products, seamless checkout"
-    },
-    {
-      id: 3,
-      title: "Organic Market",
-      category: "Food & Beverage",
-      image: "https://via.placeholder.com/600x400/e67e22/ffffff?text=Organic+Store",
-      results: "Built subscription model"
-    },
-    {
-      id: 4,
-      title: "Home Decor Shop",
-      category: "Furniture & Decor",
-      image: "https://via.placeholder.com/600x400/d35400/ffffff?text=Home+Decor",
-      results: "Mobile sales up 200%"
-    }
-  ];
 
   const testimonials = [
     {
-      name: "Sarah Mitchell",
+      name: "Sarah Johnson",
       business: "Luxe Fashion Boutique",
       text: "Justdavid_tech transformed our online presence. Sales have tripled since launching our new store. The design is beautiful and customers love how easy it is to shop!",
       rating: 5
     },
     {
-      name: "Marcus Johnson",
+      name: "Michael Odeh",
       business: "TechGear Pro",
       text: "Working with Justdavid_tech was seamless. They understood our vision and delivered a high-performance store that handles our large product catalog perfectly.",
       rating: 5
     },
     {
-      name: "Emily Rodriguez",
+      name: "Blessing Sani",
       business: "Green Earth Organics",
       text: "Not only did we get a stunning website, but the subscription feature has been a game-changer for our business model. Highly recommend!",
       rating: 5
@@ -191,48 +163,74 @@ const Ecommerce = () => {
     <Navbar />
     <div className="min-h-screen bg-white text-black">
       {/* Animated Background Elements */}
-      <div className="fixed top-20 right-20 w-96 h-96 bg-[#e67e22] rounded-full opacity-10 blur-3xl animate-pulse pointer-events-none"></div>
+      <div className="fixed top-20 right-20 w-96 h-96 bg-[#e67e22]` rounded-full opacity-10 blur-3xl animate-pulse pointer-events-none"></div>
       <div className="fixed bottom-20 left-20 w-96 h-96 bg-[#e67e22] rounded-full opacity-10 blur-3xl animate-pulse pointer-events-none" style={{ animationDelay: '1s' }}></div>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 bg-white pt-0 md:pt-0 lg:pt-10">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="inline-block bg-[#e67e22]/10 text-[#e67e22] px-6 py-2 rounded-full font-semibold mb-6">
-            E-COMMERCE SOLUTIONS
-          </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Transform Your Products Into
-            <span className="text-[#e67e22]"> Profitable Sales</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto">
-            Custom e-commerce websites that don't just look good but sell. From first click to final purchase, I build online stores that convert visitors into loyal customers.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#packages" className="bg-[#e67e22] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#d35400] transition-colors inline-flex items-center justify-center gap-2">
-              View Packages <ArrowRight size={20} />
-            </a>
-            <a href="#portfolio" className="border-2 border-[#e67e22] text-[#e67e22] px-8 py-4 rounded-lg font-semibold hover:bg-[#e67e22] hover:text-white transition-colors">
-              See My Work
-            </a>
-          </div>
-          
-          {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
-            <div className="p-6">
-              <div className="text-4xl font-bold text-[#e67e22] mb-2">50+</div>
-              <div className="text-gray-600">Stores Launched</div>
-            </div>
-            <div className="p-6">
-              <div className="text-4xl font-bold text-[#e67e22] mb-2">98%</div>
-              <div className="text-gray-600">Client Satisfaction</div>
-            </div>
-            <div className="p-6">
-              <div className="text-4xl font-bold text-[#e67e22] mb-2">$2M+</div>
-              <div className="text-gray-600">Revenue Generated</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section className="relative min-h-screen flex items-center justify-center px-6 bg-black pt-32 overflow-hidden">
+  {/* Glowing Background Circles */}
+  <div className="absolute -top-40 -left-32 w-[550px] h-[550px] rounded-full bg-[#e67e22] blur-[200px] opacity-20 animate-pulse"></div>
+  <div 
+    className="absolute bottom-0 right-0 w-[450px] h-[450px] rounded-full bg-[#e67e22] blur-[170px] opacity-20 animate-pulse"
+    style={{ animationDelay: "1.3s" }}
+  ></div>
+
+  <div className="relative max-w-6xl mx-auto text-center text-white">
+    
+    {/* BADGE */}
+    <div className="inline-block bg-[#e67e22]/20 text-[#e67e22] px-6 py-2 rounded-full font-semibold mb-6">
+      E-COMMERCE SOLUTIONS
+    </div>
+
+    {/* HEADING */}
+    <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+      Transform Your Products Into  
+      <span className="text-[#e67e22]"> Profitable Sales</span>
+    </h1>
+
+    {/* SUBTEXT */}
+    <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
+      Custom e-commerce websites built for performance and conversions.  
+      From first click to final checkout. I create online stores that turn visitors into loyal customers.
+    </p>
+
+    {/* CTA BUTTONS */}
+    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+      <a 
+        href="#packages" 
+        className="bg-[#e67e22] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#d35400] transition-colors inline-flex items-center justify-center gap-2"
+      >
+        View Packages <ArrowRight size={20} />
+      </a>
+
+      <Link to="/portfolio" 
+        className="border-2 border-[#e67e22] text-[#e67e22] px-8 py-4 rounded-lg font-semibold hover:bg-[#e67e22] hover:text-white transition-colors"
+      >
+        See My Work
+      </Link>
+    </div>
+
+    {/* STATS */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
+      <div className="p-6">
+        <div className="text-4xl font-bold text-[#e67e22] mb-2">50+</div>
+        <div className="text-gray-300">Stores Launched</div>
+      </div>
+
+      <div className="p-6">
+        <div className="text-4xl font-bold text-[#e67e22] mb-2">98%</div>
+        <div className="text-gray-300">Client Satisfaction</div>
+      </div>
+
+      <div className="p-6">
+        <div className="text-4xl font-bold text-[#e67e22] mb-2">$1.2M+</div>
+        <div className="text-gray-300">Revenue Generated</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
       {/* Features Section */}
       <section className="py-20 px-6 bg-gray-50">
@@ -253,27 +251,6 @@ const Ecommerce = () => {
         </div>
       </section>
 
-      {/* Portfolio Section */}
-      <section id="portfolio" className="py-20 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Recent E-commerce Projects</h2>
-            <p className="text-xl text-gray-600">Stores that deliver results for real businesses</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projects.map((project) => (
-              <div key={project.id} className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300">
-                <img src={project.image} alt={project.title} className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-300" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex flex-col justify-end p-6">
-                  <div className="text-[#e67e22] text-sm font-semibold mb-2">{project.category}</div>
-                  <h3 className="text-white text-2xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-gray-300">{project.results}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Process Section */}
       <section className="py-20 px-6 bg-black text-white">
@@ -323,15 +300,28 @@ const Ecommerce = () => {
                       </li>
                     ))}
                   </ul>
-                  <button className={`w-full py-4 rounded-lg font-semibold transition-colors ${pkg.popular ? 'bg-[#e67e22] text-white hover:bg-[#d35400]' : 'border-2 border-[#e67e22] text-[#e67e22] hover:bg-[#e67e22] hover:text-white'}`}>
-                    Get Started
-                  </button>
+                <button
+  onClick={() =>
+    window.open(
+      `https://wa.me/2349039977439?text=Hello%20I%20am%20interested%20in%20the%20${encodeURIComponent(pkg.name)}%20package%20for%20e-commerce%20development.`,
+      "_blank"
+    )
+  }
+  className={`w-full py-4 rounded-lg font-semibold cursor-pointer transition-colors ${
+    pkg.popular
+      ? "bg-[#e67e22] text-white hover:bg-[#d35400] cursor-pointer"
+      : "border-2 border-[#e67e22] text-[#e67e22] hover:bg-[#e67e22] hover:text-white cursor-pointer"
+  }`}
+>
+  Get Started
+</button>
+
                 </div>
               </div>
             ))}
           </div>
           <div className="text-center mt-12">
-            <p className="text-gray-600 text-lg">Need something custom? <span className="text-[#e67e22] font-semibold cursor-pointer hover:underline">Let's talk about your unique requirements</span></p>
+            <p className="text-gray-600 text-lg">Need something custom? <Link to = "/contact" className="text-[#e67e22] font-semibold cursor-pointer hover:underline">Let's talk about your unique requirements</Link></p>
           </div>
         </div>
       </section>
@@ -369,9 +359,9 @@ const Ecommerce = () => {
           <p className="text-xl mb-8 opacity-90">
             Let's turn your products into profits. Get a free consultation and quote today.
           </p>
-          <button className="bg-white text-[#e67e22] px-10 py-5 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors inline-flex items-center gap-2">
+          <HashLink smooth to = "/contact#ContactForm" className="bg-white text-[#e67e22] px-10 py-5 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors inline-flex items-center gap-2">
             Start Your Project <ArrowRight size={24} />
-          </button>
+          </HashLink>
           <p className="mt-6 opacity-75">No commitment required • Free initial consultation • Quick response time</p>
         </div>
       </section>

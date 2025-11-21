@@ -12,8 +12,18 @@ import {
 } from "lucide-react";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
+import { HashLink } from "react-router-hash-link";
 
 const DigitalMarketing = () => {
+
+  const handleWhatsapp = () => {
+    const phone = "2349039977439";
+    const message = "Hello! I want a free Digital Marketing audit.";
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+   
+    window.open(url, "_blank");
+  };
+
   return (
     <>
     <Navbar />
@@ -25,15 +35,58 @@ const DigitalMarketing = () => {
       </div>
 
       {/* ====== Hero Section ====== */}
-      <div className="relative z-10 text-center text-white py-24 px-6">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          Powerful <span className="text-[#e67e22]">Digital Marketing</span> Services
+      <section className="relative pt-32 pb-20 px-6 bg-black overflow-hidden">
+  {/* Glowing Background Effects */}
+  <div className="absolute -top-32 -left-20 w-[500px] h-[500px] rounded-full bg-[#e67e22] blur-[180px] opacity-20 animate-pulse"></div>
+  <div 
+    className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-[#e67e22] blur-[150px] opacity-20 animate-pulse" 
+    style={{ animationDelay: "1.2s" }}
+  ></div>
+
+  <div className="relative max-w-7xl mx-auto">
+    <div className="grid md:grid-cols-2 gap-12 items-center">
+
+      {/* TEXT CONTENT */}
+      <div>
+        <div className="inline-block bg-[#e67e22]/20 text-[#e67e22] px-4 py-2 rounded-full text-sm font-semibold mb-6">
+          Digital Marketing Agency
+        </div>
+
+        <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-white">
+          Grow Your Business With  
+          <span className="text-[#e67e22]"> High-Impact Digital Marketing</span>
         </h1>
-        <p className="max-w-2xl mx-auto text-gray-300 text-lg">
-          Drive growth, visibility, and engagement with strategies tailored to your business.  
-          Let’s help your brand thrive online.
+
+        <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+          We help brands attract more customers, increase visibility, and scale faster  
+          using proven digital marketing strategies tailored for real business growth.
         </p>
+
+        <div className="flex flex-col sm:flex-row gap-4">
+          <HashLink smooth to ="/contact#ContactForm" className="bg-[#e67e22] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#d35400] transition-colors inline-flex items-center justify-center gap-2 cursor-pointer">
+            Start Your Campaign
+          </HashLink>
+
+          <button onClick={handleWhatsapp} className="border-2 border-[#e67e22] text-[#e67e22] px-8 py-4 rounded-lg font-semibold hover:bg-[#e67e22] hover:text-white transition-colors inline-flex items-center justify-center gap-2 cursor-pointer">
+            Free Strategy Call
+          </button>
+        </div>
       </div>
+
+      {/* IMAGE WITH GLOW */}
+      <div className="relative">
+        <div className="absolute inset-0 bg-[#e67e22] rounded-3xl blur-2xl opacity-20"></div>
+        <img
+          src="/images/digitalmarketing.png"
+          alt="Digital Marketing"
+          className="relative rounded-3xl shadow-[0px_0px_50px_rgba(230,126,34,0.25)]"
+        />
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
       {/* ====== Overview Section ====== */}
       <div className="relative z-10 bg-white text-black py-20 px-6 md:px-12 lg:px-20">

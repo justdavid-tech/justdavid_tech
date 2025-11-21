@@ -1,5 +1,7 @@
 import React from "react";
 import "/styles.scss"; // ✅ relative import — make sure path is correct
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const HeroSection = () => {
   return (
@@ -34,12 +36,12 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="hero-cta flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <a href="/portfolio" className="btn-primary-custom">
+            <Link to="/portfolio" className="btn-primary-custom">
               View My Work
-            </a>
-            <a href="/contact" className="btn-secondary-custom">
+            </Link>
+            <HashLink smooth to="/contact#ContactSection" className="btn-secondary-custom">
               Get In Touch
-            </a>
+            </HashLink>
           </div>
         </div>
 

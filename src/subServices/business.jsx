@@ -1,9 +1,22 @@
 import React from 'react';
 import { Globe, Rocket, Palette, Search, Users, BarChart, Check, ArrowRight, Menu, X, MessageCircle, Monitor, Smartphone, Code2 } from 'lucide-react';
+/* eslint-disable no-unused-vars */
+import { motion } from "framer-motion";
+/* eslint-enable no-unused-vars */
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
+import {  HashLink } from 'react-router-hash-link';
 
 const BusinessWebsite = () => {
+
+  const handleWhatsApp = () => {
+    const phone = "2349039977439"; // change to your number
+    const message = "Hello! I want a business website";
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  
+    window.open(url, "_blank");
+  };
+
   const features = [
     {
       icon: <Palette className="w-8 h-8" />,
@@ -87,58 +100,59 @@ const BusinessWebsite = () => {
     }
   ];
 
-  const packages = [
-    {
-      name: "Starter Business",
-      price: "$1,500",
-      description: "Perfect for small businesses starting out",
-      features: [
-        "5 custom pages",
-        "Mobile responsive design",
-        "Contact form",
-        "Social media integration",
-        "Basic SEO setup",
-        "1 month support",
-        "Google Analytics",
-        "SSL certificate"
-      ],
-      highlighted: false
-    },
-    {
-      name: "Professional",
-      price: "$3,000",
-      description: "Ideal for growing businesses",
-      features: [
-        "10 custom pages",
-        "Premium design",
-        "Advanced contact forms",
-        "Blog/News section",
-        "Advanced SEO optimization",
-        "3 months support",
-        "Speed optimization",
-        "Content management system",
-        "Email integration"
-      ],
-      highlighted: true
-    },
-    {
-      name: "Enterprise",
-      price: "Custom",
-      description: "For established businesses with complex needs",
-      features: [
-        "Unlimited pages",
-        "Custom functionality",
-        "Advanced integrations",
-        "Multi-language support",
-        "Premium SEO package",
-        "6 months support",
-        "Custom animations",
-        "Dedicated account manager",
-        "Priority updates"
-      ],
-      highlighted: false
-    }
-  ];
+  // Both sections are for pricing and showcase of the websites. But I don't need them at the moment. 
+  // const packages = [
+  //   {
+  //     name: "Starter Business",
+  //     price: "$1,500",
+  //     description: "Perfect for small businesses starting out",
+  //     features: [
+  //       "5 custom pages",
+  //       "Mobile responsive design",
+  //       "Contact form",
+  //       "Social media integration",
+  //       "Basic SEO setup",
+  //       "1 month support",
+  //       "Google Analytics",
+  //       "SSL certificate"
+  //     ],
+  //     highlighted: false
+  //   },
+  //   {
+  //     name: "Professional",
+  //     price: "$3,000",
+  //     description: "Ideal for growing businesses",
+  //     features: [
+  //       "10 custom pages",
+  //       "Premium design",
+  //       "Advanced contact forms",
+  //       "Blog/News section",
+  //       "Advanced SEO optimization",
+  //       "3 months support",
+  //       "Speed optimization",
+  //       "Content management system",
+  //       "Email integration"
+  //     ],
+  //     highlighted: true
+  //   },
+  //   {
+  //     name: "Enterprise",
+  //     price: "Custom",
+  //     description: "For established businesses with complex needs",
+  //     features: [
+  //       "Unlimited pages",
+  //       "Custom functionality",
+  //       "Advanced integrations",
+  //       "Multi-language support",
+  //       "Premium SEO package",
+  //       "6 months support",
+  //       "Custom animations",
+  //       "Dedicated account manager",
+  //       "Priority updates"
+  //     ],
+  //     highlighted: false
+  //   }
+  // ];
 
   const process = [
     {
@@ -173,32 +187,32 @@ const BusinessWebsite = () => {
     }
   ];
 
-  const portfolio = [
-    {
-      title: "Legal Firm Website",
-      category: "Professional Services",
-      image: "https://via.placeholder.com/600x400/2c3e50/ffffff?text=Legal+Firm+Site",
-      description: "Sophisticated website for law practice"
-    },
-    {
-      title: "Consulting Agency",
-      category: "Business Services",
-      image: "https://via.placeholder.com/600x400/e67e22/ffffff?text=Consulting+Agency",
-      description: "Modern site showcasing expertise and services"
-    },
-    {
-      title: "Real Estate Company",
-      category: "Real Estate",
-      image: "https://via.placeholder.com/600x400/2c3e50/ffffff?text=Real+Estate+Site",
-      description: "Property listings with advanced search"
-    },
-    {
-      title: "Healthcare Practice",
-      category: "Healthcare",
-      image: "https://via.placeholder.com/600x400/e67e22/ffffff?text=Healthcare+Site",
-      description: "Patient-friendly medical practice website"
-    }
-  ];
+  // const portfolio = [
+  //   {
+  //     title: "Legal Firm Website",
+  //     category: "Professional Services",
+  //     image: "https://via.placeholder.com/600x400/2c3e50/ffffff?text=Legal+Firm+Site",
+  //     description: "Sophisticated website for law practice"
+  //   },
+  //   {
+  //     title: "Consulting Agency",
+  //     category: "Business Services",
+  //     image: "https://via.placeholder.com/600x400/e67e22/ffffff?text=Consulting+Agency",
+  //     description: "Modern site showcasing expertise and services"
+  //   },
+  //   {
+  //     title: "Real Estate Company",
+  //     category: "Real Estate",
+  //     image: "https://via.placeholder.com/600x400/2c3e50/ffffff?text=Real+Estate+Site",
+  //     description: "Property listings with advanced search"
+  //   },
+  //   {
+  //     title: "Healthcare Practice",
+  //     category: "Healthcare",
+  //     image: "https://via.placeholder.com/600x400/e67e22/ffffff?text=Healthcare+Site",
+  //     description: "Patient-friendly medical practice website"
+  //   }
+  // ];
 
   const faqs = [
     {
@@ -224,53 +238,83 @@ const BusinessWebsite = () => {
     <Navbar />
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 bg-gradient-to-br from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-block bg-[#e67e22]/10 text-[#e67e22] px-4 py-2 rounded-full text-sm font-semibold mb-6">
-                Business Website Development
-              </div>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                Build a Website That Grows Your Business
-              </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Professional, conversion-focused websites designed to attract customers, establish credibility, and drive results. Your business deserves more than just an online presence.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <button className="bg-[#e67e22] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#d35400] transition-colors inline-flex items-center justify-center gap-2">
-                  Get Free Quote <ArrowRight size={20} />
-                </button>
-                <button className="border-2 border-[#e67e22] text-[#e67e22] px-8 py-4 rounded-lg font-semibold hover:bg-[#e67e22] hover:text-white transition-colors inline-flex items-center justify-center gap-2">
-                  <MessageCircle size={20} /> Let's Talk
-                </button>
-              </div>
-              <div className="flex items-center gap-8 text-sm text-gray-600">
-                <div className="flex items-center gap-2">
-                  <Monitor size={20} className="text-[#e67e22]" />
-                  <span>Fully Responsive</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Search size={20} className="text-[#e67e22]" />
-                  <span>SEO Ready</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Code2 size={20} className="text-[#e67e22]" />
-                  <span>Clean Code</span>
-                </div>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="absolute inset-0 bg-[#e67e22] rounded-3xl blur-3xl opacity-20"></div>
-              <img 
-                src="/images/businessWebsite.jpeg" 
-                alt="Business Website Development" 
-                className="relative rounded-3xl shadow-2xl"
-              />
-            </div>
-          </div>
+      <section className="relative bg-black text-white overflow-hidden pt-32 pb-20 px-6">
+
+{/* Glowing Animated Circle */}
+<motion.div
+  initial={{ scale: 0.8, opacity: 0 }}
+  animate={{ 
+    scale: [1, 1.25, 1],
+    opacity: [0.15, 0.35, 0.15]
+  }}
+  transition={{ repeat: Infinity, duration: 7, ease: "easeInOut" }}
+  className="absolute top-[10%] left-1/2 w-[700px] h-[700px] rounded-full bg-[#e67e22] blur-[160px] opacity-30 -translate-x-1/2"
+/>
+
+<div className="relative z-10 max-w-7xl mx-auto">
+  <div className="grid md:grid-cols-2 gap-14 items-center">
+
+    {/* TEXT CONTENT */}
+    <div>
+      <div className="inline-block bg-[#e67e22]/15 text-[#e67e22] px-4 py-2 rounded-full text-sm font-semibold mb-6">
+        Business Website Development
+      </div>
+
+      <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+        Build a Website That  
+        <span className="text-[#e67e22]"> Grows Your Business</span>
+      </h1>
+
+      <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
+        Professional, conversion-focused websites designed to attract customers, 
+        establish credibility, and drive meaningful business results.
+      </p>
+
+      {/* Buttons */}
+      <div className="flex flex-col sm:flex-row gap-4 mb-10">
+        <HashLink to = "/portfolio" className="bg-[#e67e22] cursor-pointer text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#cf6f1c] transition-all inline-flex items-center justify-center gap-2 shadow-lg shadow-[#e67e2260]">
+          Explore Business websites <ArrowRight size={20} />
+        </HashLink>
+
+        <button onClick={handleWhatsApp} className="border-2 border-[#e67e22] text-[#e67e22] px-8 py-4 rounded-lg font-semibold hover:bg-[#e67e22] hover:text-white transition-all inline-flex items-center justify-center gap-2 cursor-pointer">
+          <MessageCircle size={20} /> Let's Talk
+        </button>
+      </div>
+
+      {/* Features */}
+      <div className="flex flex-wrap gap-8 text-sm text-gray-300">
+        <div className="flex items-center gap-2">
+          <Monitor size={20} className="text-[#e67e22]" />
+          <span>Fully Responsive</span>
         </div>
-      </section>
+        <div className="flex items-center gap-2">
+          <Search size={20} className="text-[#e67e22]" />
+          <span>SEO Ready</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <Code2 size={20} className="text-[#e67e22]" />
+          <span>Clean Code</span>
+        </div>
+      </div>
+    </div>
+
+    {/* IMAGE SIDE */}
+    <div className="relative">
+      {/* Glow Behind Image */}
+      <div className="absolute inset-0 bg-[#e67e22] rounded-3xl blur-3xl opacity-20"></div>
+
+      <img 
+        src="/images/businessWebsite.jpeg"
+        alt="Business Website Development"
+        className="relative rounded-3xl shadow-2xl border border-white/10"
+      />
+    </div>
+
+  </div>
+</div>
+</section>
+
+
 
       {/* Benefits Section */}
       <section className="py-20 px-6 bg-black text-white">
@@ -374,7 +418,7 @@ const BusinessWebsite = () => {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 px-6 bg-gray-50">
+      {/* <section id="pricing" className="py-20 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Transparent, Value-Driven Pricing</h2>
@@ -427,10 +471,10 @@ const BusinessWebsite = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Portfolio Section */}
-      <section id="portfolio" className="py-20 px-6 bg-white">
+      {/* <section id="portfolio" className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Recent Business Websites</h2>
@@ -455,7 +499,7 @@ const BusinessWebsite = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ Section */}
       <section className="py-20 px-6 bg-gray-50">
@@ -487,13 +531,31 @@ const BusinessWebsite = () => {
             Let's create a website that represents your business professionally and drives real results.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-[#e67e22] px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center gap-2">
-              Get Free Consultation <ArrowRight size={20} />
-            </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-[#e67e22] transition-colors inline-flex items-center justify-center gap-2">
-              <MessageCircle size={20} /> Chat With Us
-            </button>
-          </div>
+  <button
+    onClick={() =>
+      window.open(
+        "https://wa.me/2349039977439?text=Hello%20I%27d%20love%20a%20free%20consultation%20about%20your%20business%20services.",
+        "_blank"
+      )
+    }
+    className="bg-white text-[#e67e22] px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center gap-2 cursor-pointer"
+  >
+    Get Free Consultation <ArrowRight size={20} />
+  </button>
+
+  <button
+    onClick={() =>
+      window.open(
+        "https://wa.me/2349039977439?text=Hi%20I%20want%20to%20chat%20with%20you%20about%20your%20business%20services.",
+        "_blank"
+      )
+    }
+    className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-[#e67e22] transition-colors inline-flex items-center justify-center gap-2 cursor-pointer"
+  >
+    <MessageCircle size={20} /> Chat With Us
+  </button>
+</div>
+
         </div>
       </section>
   <Footer />

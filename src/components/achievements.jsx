@@ -6,46 +6,46 @@ export default function PortfolioSection() {
 
   const projects = [
     {
-      title: "Hair Salon",
+      title: "Lux Furnitures",
       type: "Website",
       image: "/images/luxfurnitures.png",
-      url: "https://hairsalon11.netlify.app",
-      description: "Modern salon booking platform"
+      url: "https://luxfurnitures.vercel.app/",
+      description: "Modern furniture e-commerce site"
     },
     {
-      title: "Rest Countries App",
+      title: "Beauty Salon",
       type: "Website",
-      image: "/images/new (2).png",
-      url: "https://rest-countries-app-chi.vercel.app/",
-      description: "Interactive countries explorer"
+      image: "/images/beautysalon.png",
+      url: "https://beautysalon-taupe.vercel.app/",
+      description: "Interactive Beauty Salon site"
     },
     {
-      title: "Furniture",
+      title: "Dictionary App",
       type: "Website",
-      image: "/images/new (1).png",
-      url: "https://woody-furnitures.vercel.app/",
-      description: "E-commerce furniture store"
-    },
-    {
-      title: "Weather App",
-      type: "Website",
-      image: "/images/work (5).png",
-      url: "https://weatherapp-eta-pied.vercel.app/",
-      description: "Real-time weather tracking"
-    },
-    {
-      title: "Dictionary",
-      type: "Website",
-      image: "/images/new (4).png",
+      image: "/images/dictionary.png",
       url: "https://otizgit.github.io/Dictionary-App/",
-      description: "Smart word lookup tool"
+      description: "Comprehensive word reference"
     },
     {
-      title: "Modeling",
+      title: "Fleek",
       type: "Website",
-      image: "/can/creativeness.png",
-      url: "https://jade11.netlify.app",
-      description: "Creative portfolio showcase"
+      image: "/images/fleekb2c.png",
+      url: "https://b2c.mercurjs.com/",
+      description: "Ecommerce platform for modern shopping"
+    },
+    {
+      title: "Excellence Academy",
+      type: "Website",
+      image: "/images/excellence.png",
+      url: "https://Excellence.vercel.app",
+      description: "Educational institution site"
+    },
+    {
+      title: "Studio",
+      type: "Website",
+      image: "/images/studio.png",
+      url: "https://umason-studio.vercel.app/",
+      description: "Creative studio portfolio"
     }
   ];
 
@@ -122,7 +122,7 @@ export default function PortfolioSection() {
         {/* View Portfolio Button */}
         <div className="text-center">
           <a href="/portfolio" className="inline-block group">
-            <button className="relative bg-[#e67e22] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#d35400] transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 overflow-hidden">
+            <button className="relative bg-[#e67e22] text-white cursor-pointer px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#d35400] transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 overflow-hidden">
               <span className="relative z-10 flex items-center gap-2">
                 Portfolio
                 <ExternalLink className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
